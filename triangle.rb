@@ -15,15 +15,20 @@
 #
 def triangle(a, b, c)
   # WRITE THIS CODE
-  if a == b or b == c or a == c
-  	if a == b and b == c
-  		return :equilateral
-  	else
-  		return :isosceles
-  	end
-  else
-  	return :scalene
-  end
+  # Basic solution
+  # if a == b or b == c or a == c
+  # 	if a == b and b == c
+  # 		return :equilateral
+  # 	else
+  # 		return :isosceles
+  # 	end
+  # else
+  # 	return :scalene
+  # end
+
+  # Pretty damn smart solution
+  [:equilateral, :isosceles, :scalene].fetch [a, b, c].uniq.size-1
+  
 end
 
 # Error class used in part 2.  No need to change this code.
