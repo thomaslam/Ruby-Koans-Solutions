@@ -27,6 +27,10 @@ def triangle(a, b, c)
   # end
 
   # Pretty damn smart solution
+  sides = [a,b,c].sort
+  raise TriangleError if sides.min < 0
+  min, next_min, max = sides
+  raise TriangleError if min + next_min <= max
   [:equilateral, :isosceles, :scalene].fetch [a, b, c].uniq.size-1
   
 end
